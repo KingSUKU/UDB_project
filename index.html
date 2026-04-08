@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Analytics</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="icon" aria-hidden="true">PA</span>
+                <h2>EduAnalytics</h2>
+            </div>
+
+            <div class="form-container">
+                <h3>Add New Student</h3>
+                <form id="student-form">
+                    <input type="text" id="student_id" placeholder="Student ID" required>
+                    <input type="text" id="student_name" placeholder="Full Name" required>
+                    <button type="submit">Create Student</button>
+                </form>
+            </div>
+
+            <div class="form-container">
+                <h3>Record Marks</h3>
+                <form id="marks-form">
+                    <input type="text" id="mark_student_id" placeholder="Student ID" required>
+                    <input type="text" id="subject_id" placeholder="Subject ID" required>
+                    <input type="number" id="marks_value" placeholder="Marks (0-100)" min="0" max="100" required>
+                    <button type="submit">Add Marks</button>
+                </form>
+            </div>
+
+            <div class="sidebar-footer">
+                <p>System Status: <span class="status-indicator"></span> Online</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Performance Dashboard</h1>
+                <p class="subtitle">Real-time academic insights and records</p>
+            </header>
+
+            <div class="metrics-grid">
+                <div class="card highlight-card">
+                    <h3>Top 3 Performers</h3>
+                    <ul id="top-performers-list" class="data-list">
+                        <li class="loading">Loading insights...</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Students Above 75%</h3>
+                    <ul id="above-75-list" class="data-list">
+                        <li class="loading">Loading insights...</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="wide-card">
+                <h3>Student Averages and Records</h3>
+                <div class="table-container">
+                    <table id="averages-table">
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Name</th>
+                                <th>Average Marks</th>
+                                <th>Performance Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="averages-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
